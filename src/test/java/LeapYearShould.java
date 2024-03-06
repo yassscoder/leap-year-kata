@@ -27,10 +27,11 @@ public class LeapYearShould {
         assertEquals(true, LeapYear.isLeap(year));
     }
 
-    @Test
-    @DisplayName("return false")
-    void return_false() {
-        assertEquals(false, LeapYear.isLeap(1800));
+    @ParameterizedTest
+    @DisplayName("return false when not multiple of 400")
+    @ValueSource(ints = {1700, 1800, 1900})
+    void return_false_if_not_multiple_400(int year) {
+        assertEquals(false, LeapYear.isLeap(year));
     }
 
 }
