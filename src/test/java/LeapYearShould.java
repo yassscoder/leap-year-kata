@@ -20,9 +20,11 @@ public class LeapYearShould {
         assertEquals(true, LeapYear.isLeap(year));
     }
 
-    @Test
-    void return_true_divisible_400() {
-        assertEquals(true, LeapYear.isLeap(1600));
+    @ParameterizedTest
+    @DisplayName("return true when divisible by 400")
+    @ValueSource(ints = {1200, 1600, 2000})
+    void return_true_divisible_400(int year) {
+        assertEquals(true, LeapYear.isLeap(year));
     }
 
 }
