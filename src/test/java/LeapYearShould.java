@@ -13,9 +13,10 @@ public class LeapYearShould {
         assertEquals(false, LeapYear.isLeap(year));
     }
 
-    @Test
+    @ParameterizedTest
     @DisplayName("return true")
-    public void return_true(){
-        assertEquals(true, LeapYear.isLeap(1996));
+    @ValueSource(ints = {1996, 2020, 2024})
+    public void return_true(int year){
+        assertEquals(true, LeapYear.isLeap(year));
     }
 }
