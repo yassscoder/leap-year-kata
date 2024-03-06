@@ -12,9 +12,4 @@ public class LeapYearShould {
         assertEquals(false, LeapYear.isLeap(year));
     }
 
-    private static class LeapYear {
-        public static boolean isLeap(int year) {
-            return false;
-        }
-    }
 }
