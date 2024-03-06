@@ -16,7 +16,13 @@ public class LeapYearShould {
     @ParameterizedTest
     @DisplayName("return true")
     @ValueSource(ints = {1996, 2020, 2024})
-    public void return_true(int year){
+    public void return_true(int year) {
         assertEquals(true, LeapYear.isLeap(year));
     }
+
+    @Test
+    void return_true_divisible_400() {
+        assertEquals(true, LeapYear.isLeap(1600));
+    }
+
 }
