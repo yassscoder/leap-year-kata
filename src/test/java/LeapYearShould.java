@@ -27,4 +27,10 @@ public class LeapYearShould {
         assertEquals(true, LeapYear.isLeap(year));
     }
 
+    @Test
+    @DisplayName("return false")
+    void return_false() {
+        assertEquals(false, LeapYear.isLeap(1800));
+    }
+
 }
